@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_AppVersion"
+        android:layout_width="140dp"
+        android:layout_height="29dp"
+        android:text="SenuxVersion1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/pt_TextInput"
+        android:layout_width="349dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="23dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="ex. sudo pacman -Syu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Command" />
+
+    <TextView
+        android:id="@+id/tv_Command"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="327dp"
+        android:text="Command:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_AppVersion" />
+
+    <Button
+        android:id="@+id/btn_Go"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="75dp"
+        android:text="GO"
+        app:layout_constraintEnd_toStartOf="@+id/btn_Save"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pt_TextInput" />
+
+    <Button
+        android:id="@+id/btn_Save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="80dp"
+        android:text="SAVE"
+        app:layout_constraintBottom_toTopOf="@+id/spin_SavedDropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_Go"
+        app:layout_constraintTop_toBottomOf="@+id/pt_TextInput"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <TextView
+        android:id="@+id/tv_SavedComamand"
+        android:layout_width="114dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="274dp"
+        android:layout_marginBottom="15dp"
+        android:text="Saved Commands"
+        app:layout_constraintBottom_toTopOf="@+id/spin_SavedDropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.733"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Go" />
+
+    <Spinner
+        android:id="@+id/spin_SavedDropdown"
+        android:layout_width="328dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="200dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_SavedComamand"
+        tools:ignore="UnknownId" />
+
+    <TextView
+        android:id="@+id/tv_Logs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="309dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spin_SavedDropdown" />
+
+    <ScrollView
+        android:id="@+id/scrollOutput"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@+id/spin_SavedDropdown"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_Output"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:padding="8dp"
+                android:text="Logs will appear here" />
+
+            <!-- can add more if needed -->
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
